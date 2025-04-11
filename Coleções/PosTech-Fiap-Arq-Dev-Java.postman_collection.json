@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "2090c131-bdfa-45ce-9d4a-29fb3a478dc4",
+		"name": "PosTech-Fiap-Arq-Dev-Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14131416",
+		"_collection_link": "https://interstellar-satellite-368322.postman.co/workspace/Team-Workspace~b075750e-efe4-41dc-8070-6fe58d50ba95/collection/14131416-2090c131-bdfa-45ce-9d4a-29fb3a478dc4?action=share&source=collection_link&creator=14131416"
+	},
+	"item": [
+		{
+			"name": "ms-usuario",
+			"item": [
+				{
+					"name": "Buscar usuário por login",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/admin",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"usuarios",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar novo usuário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"telefone\": {\n    \"ddd\": 11,\n    \"numero\": 987654321\n  },\n  \"endereco\": {\n    \"logradouro\": \"Rua das Flores\",\n    \"numero\": \"123\",\n    \"complemento\": \"Apto 202\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"São Paulo\",\n    \"estado\": \"SP\",\n    \"cep\": \"01001-000\",\n    \"pontoReferencia\": \"Próximo ao mercado X\"\n  },\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\",\n  \"tipoUsuario\": \"COMUM\",\n  \"dataAlteracao\": \"2025-04-11T03:01:09.564Z\",\n  \"dataCriacao\": \"2025-04-11T03:01:09.564Z\",\n  \"dataExclusao\": \"2025-04-11T03:01:09.564Z\",\n  \"usuarioAtivo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar dados do usuário",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"telefone\": {\n    \"ddd\": 11,\n    \"numero\": 987654321\n  },\n  \"endereco\": {\n    \"logradouro\": \"Rua das Flores\",\n    \"numero\": \"123\",\n    \"complemento\": \"Apto 202\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"São Paulo\",\n    \"estado\": \"SP\",\n    \"cep\": \"01001-000\",\n    \"pontoReferencia\": \"Próximo ao mercado X\"\n  },\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\",\n  \"tipoUsuario\": \"COMUM\",\n  \"dataAlteracao\": \"2025-04-11T03:00:06.953Z\",\n  \"dataCriacao\": \"2025-04-11T03:00:06.953Z\",\n  \"dataExclusao\": \"2025-04-11T03:00:06.953Z\",\n  \"usuarioAtivo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/admin",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"usuarios",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir conta do usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/admin",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"usuarios",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar senha do usuário",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"senhaAtual\": \"123456\",\n  \"novaSenha\": \"novaSenha123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/login/senha",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"usuarios",
+								"login",
+								"senha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/login",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
