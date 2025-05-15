@@ -11,7 +11,7 @@
 			"name": "ms-usuario",
 			"item": [
 				{
-					"name": "Buscar usuário por login",
+					"name": "Cliente - Buscar",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -21,21 +21,26 @@
 							}
 						],
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/admin",
+							"raw": "{{HOST_MS_USUARIO}}/v1/clientes?usuario=mariaolive",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
 								"v1",
-								"usuarios",
-								"admin"
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "mariaolive"
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Criar novo usuário",
+					"name": "Cliente - Inserir",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -50,7 +55,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"telefone\": {\n    \"ddd\": 11,\n    \"numero\": 987654321\n  },\n  \"endereco\": {\n    \"logradouro\": \"Rua das Flores\",\n    \"numero\": \"123\",\n    \"complemento\": \"Apto 202\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"São Paulo\",\n    \"estado\": \"SP\",\n    \"cep\": \"01001-000\",\n    \"pontoReferencia\": \"Próximo ao mercado X\"\n  },\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\",\n  \"tipoUsuario\": \"COMUM\",\n  \"dataAlteracao\": \"2025-04-11T03:01:09.564Z\",\n  \"dataCriacao\": \"2025-04-11T03:01:09.564Z\",\n  \"dataExclusao\": \"2025-04-11T03:01:09.564Z\",\n  \"usuarioAtivo\": true\n}",
+							"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"carlos.a@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 98888-0000\",\n  \"usuario\": \"carlosal\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -58,22 +63,22 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios",
+							"raw": "{{HOST_MS_USUARIO}}/v1/clientes",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
 								"v1",
-								"usuarios"
+								"clientes"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Atualizar dados do usuário",
+					"name": "Cliente - Atualizar",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "accept",
@@ -86,7 +91,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"telefone\": {\n    \"ddd\": 11,\n    \"numero\": 987654321\n  },\n  \"endereco\": {\n    \"logradouro\": \"Rua das Flores\",\n    \"numero\": \"123\",\n    \"complemento\": \"Apto 202\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"São Paulo\",\n    \"estado\": \"SP\",\n    \"cep\": \"01001-000\",\n    \"pontoReferencia\": \"Próximo ao mercado X\"\n  },\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\",\n  \"tipoUsuario\": \"COMUM\",\n  \"dataAlteracao\": \"2025-04-11T03:00:06.953Z\",\n  \"dataCriacao\": \"2025-04-11T03:00:06.953Z\",\n  \"dataExclusao\": \"2025-04-11T03:00:06.953Z\",\n  \"usuarioAtivo\": true\n}",
+							"raw": "{\n    \"nome\": \"Fernanda Souza Brabona\",\n    \"email\": \"fernanda.souza@email.com\",\n    \"endereco\": \"Alameda Santos, 350\",\n    \"telefone\": \"+55 11 95555-7890\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,21 +99,21 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/admin",
+							"raw": "{{HOST_MS_USUARIO}}/v1/clientes/mariaolive",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
 								"v1",
-								"usuarios",
-								"admin"
+								"clientes",
+								"mariaolive"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Excluir conta do usuário",
+					"name": "Cliente - Deletar",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -118,14 +123,182 @@
 							}
 						],
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/admin",
+							"raw": "{{HOST_MS_USUARIO}}/v1/clientes/saborcaseiro",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
 								"v1",
-								"usuarios",
-								"admin"
+								"clientes",
+								"saborcaseiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurante - Buscar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes?usuario=fernandinha1",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"restaurantes"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "fernandinha1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurante- Inserir",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Fernanda Souza\",\n  \"email\": \"fernanda.souza@email.com\",\n  \"endereco\": \"Alameda Santos, 350\",\n  \"telefone\": \"+55 11 95555-7890\",\n  \"usuario\": \"fernandinha1\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"restaurantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurante - Atualizar",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Fernanda Souza Brabona12\",\n    \"email\": \"fernanda.souza@email.com\",\n    \"endereco\": \"Alameda Santos, 350\",\n    \"telefone\": \"+55 11 95555-7890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes/fernandinha1",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"restaurantes",
+								"fernandinha1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurante - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes/cantinaitaliana",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"restaurantes",
+								"cantinaitaliana"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-login",
+			"item": [
+				{
+					"name": "Realizar login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"usuario\": \"teste2657\",\n  \"senha\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/auth/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
 							]
 						}
 					},
@@ -147,7 +320,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"senhaAtual\": \"123456\",\n  \"novaSenha\": \"novaSenha123\"\n}",
+							"raw": "{\n  \"senhaAntiga\": \"novaSenha123\",\n  \"senhaNova\": \"123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -155,24 +328,23 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/login/senha",
+							"raw": "{{HOST_MS_LOGIN}}/v1/login/teste2657",
 							"host": [
-								"{{HOST_MS_USUARIO}}"
+								"{{HOST_MS_LOGIN}}"
 							],
 							"path": [
 								"v1",
-								"usuarios",
 								"login",
-								"senha"
+								"teste2657"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Realizar login",
+					"name": "Deletar Login",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "accept",
@@ -183,9 +355,28 @@
 								"value": "application/json"
 							}
 						],
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/login/teste2657",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"login",
+								"teste2657"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Login",
+					"request": {
+						"method": "POST",
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"login\": \"joaosilva\",\n  \"senha\": \"123456\"\n}",
+							"raw": "{\r\n    \"usuario\" : \"te26157\",\r\n    \"senha\" : \"sen1a123\",\r\n    \"documento\" : \"95700110\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -193,14 +384,39 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/v1/usuarios/login",
+							"raw": "{{HOST_MS_LOGIN}}/v1/auth/registration",
 							"host": [
-								"{{HOST_MS_USUARIO}}"
+								"{{HOST_MS_LOGIN}}"
 							],
 							"path": [
 								"v1",
-								"usuarios",
+								"auth",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verificar Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/auth/login?usuario=teste2657",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"auth",
 								"login"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "teste2657"
+								}
 							]
 						}
 					},
