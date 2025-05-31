@@ -493,7 +493,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"usuario\" : \"usuarioTeste\",\r\n    \"senha\" : \"123321\",\r\n    \"documento\" : \"52117968023\"\r\n}",
+									"raw": "{\r\n    \"usuario\" : \"usuarioCliente\",\r\n    \"senha\" : \"123321\",\r\n    \"documento\" : \"52117968023\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -521,7 +521,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"usuario\" : \" \",\r\n    \"senha\" : \" \",\r\n    \"documento\" : \"49062820085\"\r\n}",
+									"raw": "{\r\n    \"usuario\" : \" \",\r\n    \"senha\" : \" \",\r\n    \"documento\" : \" \"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -627,7 +627,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Joao da Silva\",\n  \"email\": \"joao.da.silva@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 97777-0000\",\n  \"usuario\": \"usuarioParceiro\"\n}\n",
+									"raw": "{\n  \"nome\": \"Joao da Silva\",\n  \"email\": \"joao.da.silva@email.com\",\n  \"endereco\": \"Travessa do Sol, 1882\",\n  \"telefone\": \"+55 41 97777-0000\",\n  \"usuario\": \"usuarioParceiro\"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -663,7 +663,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"joao.da.sa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 98888-0000\",\n  \"usuario\": \"carlosal\"\n}\n",
+									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"maria.da.silva.costa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 98888-0000\",\n  \"usuario\": \"carlosal\"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -699,7 +699,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"joao.da.sa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 98888-0000\",\n  \"usuario\": \"carlosal\"\n}\n",
+									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"joao.da.silva@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 98888-0000\",\n  \"usuario\": \"carlosal\"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -735,7 +735,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"joao.da.sa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 98888-0000\",\n  \"usuario\": \"carlosal\"\n}",
+									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"joao.da.sa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 99998-0000\",\n  \"usuario\": \"carlosal\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -771,7 +771,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"joao.da.sa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 98888-0000\",\n  \"usuario\": \"carlosal\"\n}",
+									"raw": "{\n  \"nome\": \"Carlos Alberto\",\n  \"email\": \"joao.da.sa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 97777-0000\",\n  \"usuario\": \"carlosal\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -807,7 +807,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nome\": \" \",\n  \"email\": \"carlo.a@email.com\",\n  \"endereco\": \" \",\n  \"telefone\": \" \",\n  \"usuario\": \" \"\n}\n",
+									"raw": "{\n  \"nome\": \" \",\n  \"email\": \"maria.da.silva.costa@email.com\",\n  \"endereco\": \" \",\n  \"telefone\": \" \",\n  \"usuario\": \" \"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -921,7 +921,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"senhaAntiga\": \"novaSenha123\",\n  \"senhaNova\": \"123\"\n}",
+									"raw": "{\n  \"senhaAntiga\": \"senha123\",\n  \"senhaNova\": \"1234321\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1032,7 +1032,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"senhaAntiga\": \"novaSenha123\",\n  \"senhaNova\": \"123\"\n}",
+									"raw": "{\n  \"senhaAntiga\": \"senha123\",\n  \"senhaNova\": \"123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1077,14 +1077,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{HOST_MS_LOGIN}}/v1/login/teste2657",
+									"raw": "{{HOST_MS_LOGIN}}/v1/login/usuarioCliente",
 									"host": [
 										"{{HOST_MS_LOGIN}}"
 									],
 									"path": [
 										"v1",
 										"login",
-										"teste2657"
+										"usuarioCliente"
 									]
 								}
 							},
@@ -1296,7 +1296,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Fernanda Souza Brabona\",\n    \"email\": \"fernanda.souza@email.com\",\n    \"endereco\": \"Alameda Santos, 4000\",\n    \"telefone\": \"+55 11 95555-7890\"\n}",
+									"raw": "{\n  \"nome\": \"Maria da Silva Costa\",\n  \"email\": \"maria.da.silva.costa@email.com\",\n  \"endereco\": \"Travessa do Sol, 12\",\n  \"telefone\": \"+55 41 99998-0000\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1333,7 +1333,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Fernanda Souza Brabona\",\n    \"email\": \"fernanda.souza@email.com\",\n    \"endereco\": \"Alameda Santos, 35099\",\n    \"telefone\": \"+55 11 95555-7890\"\n}",
+									"raw": "{\n  \"nome\": \"Joao da Silva\",\n  \"email\": \"joao.da.silva@email.com\",\n  \"endereco\": \"Travessa do Sol, 1882\",\n  \"telefone\": \"+55 41 97777-0000\"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1486,7 +1486,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"usuario\": \"usuarioParceiro\",\n  \"senha\": \"sebnhaa \"\n}",
+									"raw": "{\n  \"usuario\": \"usuarioParceiro\",\n  \"senha\": \"1234321\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1759,6 +1759,32 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Realizar consulta do status do usuário sem enviar o parametro",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST_MS_LOGIN}}/v1/auth/login",
+									"host": [
+										"{{HOST_MS_LOGIN}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "usuario",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1938,6 +1964,36 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Tentar realizar consulta sem enviar o parametro",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes",
+									"host": [
+										"{{HOST_MS_USUARIO}}"
+									],
+									"path": [
+										"v1",
+										"restaurantes"
+									],
+									"query": [
+										{
+											"key": "usuario",
+											"value": " ",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -2015,14 +2071,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{HOST_MS_LOGIN}}/v1/login/usuarioCliente",
+									"raw": "{{HOST_MS_LOGIN}}/v1/login/teste123",
 									"host": [
 										"{{HOST_MS_LOGIN}}"
 									],
 									"path": [
 										"v1",
 										"login",
-										"usuarioCliente"
+										"teste123"
 									]
 								}
 							},
@@ -2192,14 +2248,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes/ ",
+									"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes/",
 									"host": [
 										"{{HOST_MS_USUARIO}}"
 									],
 									"path": [
 										"v1",
 										"restaurantes",
-										" "
+										""
 									]
 								}
 							},
