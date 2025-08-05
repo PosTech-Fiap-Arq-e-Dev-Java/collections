@@ -627,7 +627,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Joao da Silva\",\n  \"email\": \"joao.da.silva@email.com\",\n  \"endereco\": \"Travessa do Sol, 1882\",\n  \"telefone\": \"+55 41 97777-0000\",\n  \"usuario\": \"usuarioParceiro\"\n}\n",
+									"raw": "{\n    \"nome\": \"Joao da Silva\",\n    \"email\": \"joao.da.silva@email.com\",\n    \"endereco\": \"Travessa do Sol, 1882\",\n    \"telefone\": \"+55 41 97777-0000\",\n    \"usuario\": \"usuarioParceiro\",\n    \"tipoCozinha\": \"Brasileira\",\n    \"horarioFuncionamentoInicio\": \"09:00\",\n    \"horarioFuncionamentoFim\": \"18:00\",\n    \"donoRestaurante\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -858,6 +858,42 @@
 									"path": [
 										"v1",
 										"restaurantes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tentar criar usuário cliente enviando informações específicas de usuário parceiro",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Joao da Silva\",\n    \"email\": \"joao.da.silva@email.com\",\n    \"endereco\": \"Travessa do Sol, 1882\",\n    \"telefone\": \"+55 41 97777-0000\",\n    \"usuario\": \"usuarioCliente\",\n    \"tipoCozinha\": \"Brasileira\",\n    \"horarioFuncionamentoInicio\": \"09:00\",\n    \"horarioFuncionamentoFim\": \"18:00\",\n    \"donoRestaurante\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_USUARIO}}/v1/clientes",
+									"host": [
+										"{{HOST_MS_USUARIO}}"
+									],
+									"path": [
+										"v1",
+										"clientes"
 									]
 								}
 							},
@@ -1133,7 +1169,7 @@
 							"response": []
 						},
 						{
-							"name": "Alterar nome, e-mail, telefone e endereço do usuário parceiro",
+							"name": "Alterar as informações de cliente usando as mesmas informações específicas para parceiros",
 							"request": {
 								"method": "PATCH",
 								"header": [
@@ -1148,7 +1184,44 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"PauloSouza Brabona\",\n    \"email\": \"paulosouza@email.com\",\n    \"endereco\": \"Alameda Santos, 350\",\n    \"telefone\": \"+55 11 95555-7890\"\n}",
+									"raw": "{\n    \"nome\": \"Fernanda Souza Brabona\",\n    \"email\": \"fernanda.souza@email.com\",\n    \"endereco\": \"Alameda Santos, 350\",\n    \"telefone\": \"+55 11 95555-7890\",\n    \"tipoCozinha\": \"Mexicana \",\n    \"horarioFuncionamentoInicio\": \"08:00\",\n    \"horarioFuncionamentoFim\": \"19:00\",\n    \"donoRestaurante\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_USUARIO}}/v1/clientes/usuarioCliente",
+									"host": [
+										"{{HOST_MS_USUARIO}}"
+									],
+									"path": [
+										"v1",
+										"clientes",
+										"usuarioCliente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar todas as informações do usuário parceiro",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"PauloSouza Brabona\",\n    \"email\": \"paulosouza@email.com\",\n    \"endereco\": \"Alameda Santos, 350\",\n    \"telefone\": \"+55 11 95555-7890\",\n    \"tipoCozinha\": \"Mexicana \",\n    \"horarioFuncionamentoInicio\": \"08:00\",\n    \"horarioFuncionamentoFim\": \"19:00\",\n    \"donoRestaurante\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1822,6 +1895,9 @@
 						},
 						{
 							"name": "Realizar consulta de usuário parceiro",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1830,6 +1906,15 @@
 										"value": "application/json"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{HOST_MS_USUARIO}}/v1/restaurantes?usuario=usuarioParceiro",
 									"host": [
@@ -2256,6 +2341,1120 @@
 										"v1",
 										"restaurantes",
 										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cadastro Cardapio",
+					"item": [
+						{
+							"name": "Criar item de Cardápio para Restaurante enviando todas as informações",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"usuario\": \"usuarioParceiro\",\n  \"nome\": \"Marmita\",\n  \"codigoTags\": [\"01\", \"07\", \"11\", \"13\"],\n  \"descricao\": \"Marmita Completa\",\n  \"preco\": 15,\n  \"disponivelLocal\": true,\n  \"fotoPath\": \"/imagens/marmita.jpg\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar item de Cardápio para Restaurante enviando todas as informações ja cadastradas",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"usuario\": \"usuarioParceiro\",\n  \"nome\": \"Marmita\",\n  \"codigoTags\": [\"01\", \"07\", \"11\", \"13\"],\n  \"descricao\": \"Marmita Completa\",\n  \"preco\": 15,\n  \"disponivelLocal\": true,\n  \"fotoPath\": \"/imagens/marmita.jpg\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar item de Cardápio para Restaurante enviando todas as informações vazias",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"usuario\": \"\",\n  \"nome\": \"\",\n  \"codigoTags\": [\"\", \"\", \"\", \"\"],\n  \"descricao\": \"\",\n  \"preco\": \"\",\n  \"disponivelLocal\": \"\",\n  \"fotoPath\": \"\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar item de Cardápio para Restaurante não enviando a informação do usuário",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"Marmita\",\n  \"codigoTags\": [\"01\", \"07\", \"11\", \"13\"],\n  \"descricao\": \"Marmita Completa\",\n  \"preco\": 15,\n  \"disponivelLocal\": true,\n  \"fotoPath\": \"/imagens/marmita.jpg\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar item de Cardápio para Restaurante enviando o body vazio",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Casdatro Tag",
+					"item": [
+						{
+							"name": "Adicionar Tag para um item de cardápio",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"codigoTags\": \"15\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro/tags?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar Tag para um item de cardápio enviando Tag inválida",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"codigoTags\": \"30\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro/tags?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar Tag para um item de cardápio sem enviar o campo da tag",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro/tags?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar Tag para um item de cardápio enviando o codigo da tag vazio",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"codigoTags\": \" \"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro/tags?idItemCardapio=3",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar Tag para um item de cardápio enviando o usuario e item de cardapio invalido",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"codigoTags\": \"30\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuario/tags?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuario",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar Tag para um item de cardápio que já possui 5 tags",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"codigoTags\": \"08\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro/tags?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Alteração Cardapio",
+					"item": [
+						{
+							"name": "Alterar as informações de cardápio para o usuário e item",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"Feijoada\",\n  \"descricao\": \"Marmita Completa de feijoada\",\n  \"preco\": 35\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar as informações de cardápio para o usuário e item com informações ja existentes",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"Feijoada\",\n  \"descricao\": \"Marmita Completa de feijoada\",\n  \"preco\": 35\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=1",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar as informações de cardápio para o usuário e item para usuario não encontrado",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"Feijoada Copmpleta\",\n  \"descricao\": \"Marmita Completa de feijoada\",\n  \"preco\": 35\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuario?idItemCardapio=1",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuario"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar as informações de cardápio para o usuário e item para item não encontrado",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"Feijoada Copmpleta\",\n  \"descricao\": \"Marmita Completa de feijoada\",\n  \"preco\": 35\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuario?idItemCardapio=9",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuario"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar as informações de cardápio para o usuário e item não enviando dados para atualizar",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar as informações de cardápio para o usuário e item enviando dados vazios",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"\",\n  \"descricao\": \"\",\n  \"preco\": \"\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuario?idItemCardapio=9",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuario"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consulta Cardapio",
+					"item": [
+						{
+							"name": "Consulta Itens de Cardapio por Usuário",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consulta Itens de Cardapio por usuário e item específico",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consulta Itens de Cardapio enviando usuário inválido",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consulta Itens de Cardapio enviando item de cardapio invalido",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=4",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar as Tags cadastradas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/tags",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"tags"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deletar Cardapio",
+					"item": [
+						{
+							"name": "Deletar tag para item específico do cardápio",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=2&codigoTag=13",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										},
+										{
+											"key": "codigoTag",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar tag para item específico do cardápio de um usuário invalido",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuario?idItemCardapio=1&codigoTag=13",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuario"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "1"
+										},
+										{
+											"key": "codigoTag",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar tag para um usuário com o item de cardápio inválido",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=6&codigoTag=13",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "6"
+										},
+										{
+											"key": "codigoTag",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar tag para um usuário e item de cardápio com a tag inválida",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=1&codigoTag=80",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "1"
+										},
+										{
+											"key": "codigoTag",
+											"value": "80"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar cardápio de um usuário específico",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuarioParceiro?idItemCardapio=2",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuarioParceiro"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "2"
+										},
+										{
+											"key": "codigoTag",
+											"value": "13",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar cardápio para usuário e item do cardápio inválido",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HOST_MS_CARDAPIO}}/v1/itens/usuario?idItemCardapio=1",
+									"host": [
+										"{{HOST_MS_CARDAPIO}}"
+									],
+									"path": [
+										"v1",
+										"itens",
+										"usuario"
+									],
+									"query": [
+										{
+											"key": "idItemCardapio",
+											"value": "1"
+										},
+										{
+											"key": "codigoTag",
+											"value": "13",
+											"disabled": true
+										}
 									]
 								}
 							},
