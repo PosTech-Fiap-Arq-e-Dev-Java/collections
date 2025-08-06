@@ -1,6 +1,6 @@
-# 🧪 Collection de Testes - Microsserviços de Login e Usuário
+# 🧪 Collection de Testes - Microsserviços de Login, Usuário e Cardapio
 
-Este repositório contém uma coleção de testes Postman estruturada para validar os microsserviços `ms-login` e `ms-usuario`. A collection cobre todos os fluxos principais das aplicações, tanto de sucesso quanto de erro.
+Este repositório contém uma coleção de testes Postman estruturada para validar os microsserviços `ms-login` , `ms-usuario` e `ms-cardapio`. A collection cobre todos os fluxos principais das aplicações, tanto de sucesso quanto de erro.
 
 ---
 
