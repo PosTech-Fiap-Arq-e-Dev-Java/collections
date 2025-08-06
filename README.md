@@ -14,7 +14,10 @@ Contém chamadas para o microsserviço de login de uma forma geral.
 ### 2. **ms-usuario**
 Contém chamadas para o microsserviço de usuários de uma forma geral.
 
-### 3. **Cenários de Testes Manuais**
+### 3. **ms-cardapio**
+Contém chamadas para o microsserviço de cardapio de uma forma geral.
+
+### 4. **Cenários de Testes Manuais**
 Pasta com **testes manuais** divididos em subpastas, separando os cenários de **sucesso e erro** por funcionalidade, como:
 
 - `Cadastro login`
@@ -26,6 +29,11 @@ Pasta com **testes manuais** divididos em subpastas, separando os cenários de *
 - `Consulta usuario`
 - `Deletar login`
 - `Deletar usuario`
+- `Cadastro cardapio`
+- `Cadastro tag`
+- `Alteração cardapio`
+- `Consulta cardapio`
+- `Deletar cardapio`
 
 ---
 
@@ -33,10 +41,12 @@ Pasta com **testes manuais** divididos em subpastas, separando os cenários de *
 
 A collection utiliza um arquivo `.postman_environment.json` com as seguintes variáveis:
 
-| Serviço     | Porta | URL Base                         |
-|-------------|-------|----------------------------------|
-| ms-login    | 9207  | `http://localhost:9207/ms-login` |
-| ms-usuario  | 9808  | `http://localhost:9808/ms-usuario` |
+| Serviço      | Porta | URL Base                            |
+|--------------|-------|-------------------------------------|
+| ms-login     | 9207  | `http://localhost:9207/ms-login`    |
+| ms-usuario   | 9808  | `http://localhost:9808/ms-usuario`  |
+| ms-cardapio  | 9909  | `http://localhost:9909/ms-cardapio` |
+
 
 Essas variáveis facilitam a execução dos testes sem precisar alterar manualmente os endpoints.
 
@@ -52,7 +62,7 @@ Essas variáveis facilitam a execução dos testes sem precisar alterar manualme
 
 ## ✅ Requisitos para os testes passarem
 
-- Microsserviços ms-login e ms-usuario devem estar executando localmente nas portas 9207 e 9808, respectivamente.
+- Microsserviços ms-login, ms-usuario e ms-cardapio devem estar executando localmente nas portas 9207, 9808 e 9909, respectivamente.
  
 - Banco de dados deve estar disponível e corretamente populado, conforme os cenários esperados.
 
